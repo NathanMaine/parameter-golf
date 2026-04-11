@@ -116,8 +116,10 @@ class Hyperparameters:
     late_qat = bool(int(os.environ.get("LATE_QAT", "1")))
     qat_threshold = float(os.environ.get("QAT_THRESHOLD", "0.15"))
 
-    # TTT: SGD fine-tune on val data after training
-    ttt_enabled = bool(int(os.environ.get("TTT_ENABLED", "1")))
+    # TTT DISABLED (was training on val_tokens multi-epoch without score-first discipline,
+    # flagged as Issue #402 / Issue #677 illegal pattern by @MatoTeziTanka on 2026-04-11).
+    # Default is now 0. Architecture results below are from legal no-TTT runs.
+    ttt_enabled = bool(int(os.environ.get("TTT_ENABLED", "0")))
     ttt_lr = float(os.environ.get("TTT_LR", "0.0005"))
     ttt_epochs = int(os.environ.get("TTT_EPOCHS", "10"))
     ttt_momentum = float(os.environ.get("TTT_MOMENTUM", 0.9))
