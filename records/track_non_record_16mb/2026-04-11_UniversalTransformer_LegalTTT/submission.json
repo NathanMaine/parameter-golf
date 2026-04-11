@@ -1,0 +1,1 @@
+{"track":"non_record","title":"Universal Transformer + Legal Pre-Quant TTT","val_bpb":null,"hardware":"1xDGX-Spark-GB10","author":"NathanMaine","notes":"Legal resubmission of PR #1193. TTT now trains on held-out training-data slice (not val_tokens) per MatoTeziTanka review. BPB pending Spark run completion."}
